@@ -72,4 +72,4 @@ Displays detailed information for a specific CVE, including descriptions, metric
 
 ## Frontend Page
 
-![Screenshot 1](images/i1.png)
+![Screenshot 1](Images/i1.png)
