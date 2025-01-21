@@ -1,35 +1,75 @@
 # Securin_NVD_CVE
-NVD - CVE API:
-The CVE API is used to easily retrieve information on a single CVE or a collection of
-CVE from the NVD. Pls refer to the below NVD CVE documentation to get more
-information.
-https://nvd.nist.gov/developers/vulnerabilities
-Problem Statement:
-1. Consume the CVE information from the CVE API for all the CVE's and store
-it in a Database of your choice. - (API BaseURL -
-https://services.nvd.nist.gov/rest/json/cves/2.0)
-2. Hint for accessing all the CVE's from API - Through a series of smaller
-“chunked” responses controlled by an offset startIndex and a page lim
-resultsPerPage users may page through all the CVE in the NVD.
-3. Apply data cleansing & de-duplication, ensure data quality wherever
-applicable
-4. CVE details should be synchronized into Database periodically in batch
-mode in a specific time period - (This can be full data refresh or increment
-refresh for modified data alon
-5. Develop API’s to read & filter the CVE details by below parameters -
-● CVE ID
-● CVE ID’s belogs to a specific year
-● CVE Score (Field to ref -
-metrics.cvssMetricV2.cvssData.baseScore or
-metrics.cvssMetricV3.cvssData.baseScore)
-● last Modified in N days
-6. Read the API and visualise it in UI using HTML, CSS and Javascript
-7. Prepare the API documentations for each operations.
-8. Write well defined unit test cases for the functionalitie
-9. Code should be clear, vulnerable free & well tested and should follow the
-best practices and standards.
-The first page should contain:
-1. The route path should be /cves/list.
+README for NVD - CVE API Project
+Overview
+This project retrieves and processes CVE data from the National Vulnerability Database (NVD) using their API and stores it in a database. It allows for filtering, sorting, and viewing CVE details through a web interface.
+
+Features
+Fetch CVE Data: Retrieve CVE data from NVD API using https://services.nvd.nist.gov/rest/json/cves/2.0.
+Database Integration: Store CVE details in a database of choice with periodic synchronization.
+Data Cleaning & De-duplication: Ensures the integrity of stored data.
+API for CVE Filtering: Filter CVE details by ID, year, score, and modification date.
+Server-Side Pagination: Implement pagination for efficient data browsing.
+Sorting by Date: Sort results by publication or modification date.
+Setup
+Install Dependencies:
+
+Backend: Node.js, Express, Mongoose
+Frontend: React, Bootstrap
+Run:
+
+bash
+Copy
+Edit
+npm install
+Configure Database:
+
+Set up a MongoDB database and configure it in .env.
+Run Backend:
+
+Start the server:
+bash
+Copy
+Edit
+npm start
+Server will be running on http://localhost:5000.
+Run Frontend:
+
+Start the React app:
+bash
+Copy
+Edit
+npm run start
+Frontend will be accessible at http://localhost:3000.
+API Endpoints
+Get List of CVEs:
+GET /api/cves
+
+Query params: resultsPerPage, startIndex, year, score, modifiedDays, sortOrder
+Filters and pagination for the CVE data.
+Get Specific CVE by ID:
+GET /api/cves/:cveId
+
+Fetch detailed information for a specific CVE.
+Get CVEs by Year:
+GET /api/cves/year/:year
+
+Fetch CVEs from a specific year.
+Get CVEs by Score:
+GET /api/cves/score/:score
+
+Fetch CVEs with a specific score.
+Get CVEs Modified in Last X Days:
+GET /api/cves/modified/:days
+
+Fetch CVEs modified in the last specified number of days.
+UI Implementation
+CVE List Page:
+
+Displays CVE records in a table with pagination and sorting.
+Filters for Year, Score, and Modified Days.
+CVE Detail Page:
+
+Displays detailed information for a specific CVE, including descriptions, metrics, and CPEs.
 2. Read the API and display its results in a table with a "Total Records" count.
 3. Include "Results Per Page" below the table, offering options of "10", "50", and "100",
 with a default selection of "10". Whenever an option is chosen, execute the
