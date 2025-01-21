@@ -69,3 +69,7 @@ Filters for Year, Score, and Modified Days.
 CVE Detail Page:
 
 Displays detailed information for a specific CVE, including descriptions, metrics, and CPEs.
+
+## Frontend Page
+
+![Screenshot 1](images/i1.png)
