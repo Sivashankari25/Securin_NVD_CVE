@@ -1,26 +1,25 @@
-# Securin_NVD_CVE
-README for NVD - CVE API Project
-Overview
+# NVD - CVE API Project
+
+## Overview
 This project retrieves and processes CVE data from the National Vulnerability Database (NVD) using their API and stores it in a database. It allows for filtering, sorting, and viewing CVE details through a web interface.
 
-Features
-Fetch CVE Data: Retrieve CVE data from NVD API using https://services.nvd.nist.gov/rest/json/cves/2.0.
-Database Integration: Store CVE details in a database of choice with periodic synchronization.
-Data Cleaning & De-duplication: Ensures the integrity of stored data.
-API for CVE Filtering: Filter CVE details by ID, year, score, and modification date.
-Server-Side Pagination: Implement pagination for efficient data browsing.
-Sorting by Date: Sort results by publication or modification date.
-Setup
-Install Dependencies:
+## Features
+- **Fetch CVE Data**: Retrieve CVE data from NVD API using `https://services.nvd.nist.gov/rest/json/cves/2.0`.
+- **Database Integration**: Store CVE details in a database of choice with periodic synchronization.
+- **Data Cleaning & De-duplication**: Ensures the integrity of stored data.
+- **API for CVE Filtering**: Filter CVE details by ID, year, score, and modification date.
+- **Server-Side Pagination**: Implement pagination for efficient data browsing.
+- **Sorting by Date**: Sort results by publication or modification date.
 
-Backend: Node.js, Express, Mongoose
-Frontend: React, Bootstrap
-Run:
+## Setup
 
-bash
-Copy
-Edit
-npm install
+1. **Install Dependencies**:
+   - Backend: Node.js, Express, Mongoose
+   - Frontend: React, Bootstrap
+
+   Run:
+   ```bash
+   npm install
 Configure Database:
 
 Set up a MongoDB database and configure it in .env.
@@ -70,9 +69,3 @@ Filters for Year, Score, and Modified Days.
 CVE Detail Page:
 
 Displays detailed information for a specific CVE, including descriptions, metrics, and CPEs.
-2. Read the API and display its results in a table with a "Total Records" count.
-3. Include "Results Per Page" below the table, offering options of "10", "50", and "100",
-with a default selection of "10". Whenever an option is chosen, execute the
-respective API call to retrieve the records.(Good to have)
-4. Add server side “Pagination” functionality (Optional - Added advantage)
-5. Add server side “sorting” for “Dates” (Optional - Added advantage)
