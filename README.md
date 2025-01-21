@@ -74,10 +74,8 @@ Displays detailed information for a specific CVE, including descriptions, metric
 
 ![Screenshot 1](Images/i1.png)
 
-## Frontend Page 2
-
 ![Screenshot 2](Images/i2.png)
 
-## Pagination
+## Frontend Page 2
 
 ![Screenshot 1](Images/i3.png)
