@@ -70,6 +70,14 @@ CVE Detail Page:
 
 Displays detailed information for a specific CVE, including descriptions, metrics, and CPEs.
 
-## Frontend Page
+## Frontend Page 1
 
 ![Screenshot 1](Images/i1.png)
+
+## Frontend Page 2
+
+![Screenshot 2](Images/i2.png)
+
+## Pagination
+
+![Screenshot 1](Images/i3.png)
