@@ -1,0 +1,155 @@
+/* Global font set to serif */
+body {
+  font-family: serif; /* Change the font to serif globally */
+  background-color: #fffaf0; /* Milk white background */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* App styles */
+.App {
+  text-align: center;
+  background-color: #fffaf0; /* Milk white background */
+}
+
+.App-header {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Blue gradient */
+  border-radius: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(14px + 2vmin);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.8);
+}
+
+/* Heading styles */
+.App-header h1 {
+  font-size: 3rem; /* Extra large font size */
+  font-weight: 900; /* Extra bold */
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.cve-table {
+  margin-top: 20px;
+}
+
+.cve-table caption {
+  font-size: 24px; /* Bigger font size for CVE LIST */
+  font-weight: 900; /* Extra bold */
+  color: #007bff; /* Blue */
+  padding: 10px;
+  text-align: center;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border: 2px solid #007bff; /* Blue border */
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+th {
+  background-color: #007bff !important; /* Strictly blue background for header */
+  color: white !important; /* Ensure white text for contrast */
+  font-weight: bold;
+  padding: 12px 15px;
+  text-align: center;
+  border: 2px solid #003d80 !important; /* Strictly blue border for header */
+  font-size: 16px;
+  text-transform: uppercase; /* Make header text uppercase for emphasis */
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+tbody tr {
+  background-color: #d0e7ff; /* Light blue shade for rows */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #e6f3ff; /* Light pastel blue */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f9ff; /* Even lighter pastel blue */
+}
+
+tbody tr:hover {
+  background-color: #c2dbff; /* Slightly darker blue on hover */
+}
+
+td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 2px solid #a1c9ff; /* Subtle blue border */
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+td:hover {
+  background-color: #d8ebff; /* Light cyan-blue on hover */
+  cursor: pointer;
+}.pagination {
+  display: flex;
+  justify-content: flex-end; /* Align the entire pagination to the right */
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 10px; /* Add spacing from the right side */
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff; /* Blue button */
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: scale(1.05); /* Slight zoom */
+}
+
+.pagination button.active {
+  background-color: #004085; /* Dark blue for active button */
+}
+
+.pagination button:disabled {
+  background-color: #d1d5db; /* Gray for disabled buttons */
+  cursor: not-allowed;
+}
+
+/* Pagination button styles */
+.pagination-buttons .btn {
+  width: 140px;
+  font-size: 1em;
+  background-color: #007bff; /* Blue button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-buttons .btn:hover {
+  background-color: #0056b3; /* Darker shade of blue */
+  transform: scale(1.05); /* Slight zoom */
+}
+
+.pagination-buttons .btn:disabled {
+  background-color: #d1d5db; /* Gray for disabled buttons */
+  cursor: not-allowed;
+}

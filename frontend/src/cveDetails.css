@@ -1,0 +1,58 @@
+table {
+    width: 100%;
+    border: 2px solid #007bff; /* Blue border */
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* White background for table */
+  }
+  
+  th {
+    background-color: #007bff; /* Blue header background */
+    color: white; /* White text for contrast */
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: center;
+    border: 2px solid #007bff; /* Blue border */
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  tbody tr {
+    background-color: #d0e7ff; /* Light blue shade for rows */
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #e6f3ff; /* Lighter blue for odd rows */
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f9ff; /* Lightest blue for even rows */
+  }
+  
+  tbody tr:hover {
+    background-color: #b3d4ff; /* Slightly darker blue on hover */
+  }
+  
+  td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 2px solid #a1c9ff; /* Subtle blue border */
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  td:hover {
+    background-color: #cce6ff; /* Light blue on hover */
+    cursor: pointer;
+  }
+  
+  caption {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff; /* Blue color for the caption */
+    padding: 10px;
+    text-align: center;
+  }
+  
