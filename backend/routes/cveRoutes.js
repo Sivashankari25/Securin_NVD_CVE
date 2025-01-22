@@ -39,7 +39,7 @@ router.get('/', async (req, res) => {
                 $gte: [
                     {
                         $dateFromString: {
-                            dateString: "$lastModified",
+                            dateString: "$lastModifiedDate",
                             format: "%Y-%m-%dT%H:%M:%S.%L"
                         }
                     },
@@ -101,7 +101,7 @@ router.post('/store', async (req, res) => { // Ensure the function is async
                 cveId: cve.id,
                 sourceIdentifier: cve.sourceIdentifier,
                 publishedDate: cve.published,
-                lastModifiedDate: cve.lastModified,
+                lastModifiedDate: cve.lastModifiedDate,
                 vulnStatus: cve.vulnStatus || 'N/A',
                 descriptions: cve.descriptions?.map(desc => ({
                     lang: desc.lang,
@@ -202,7 +202,7 @@ router.get("/year/:year", async (req, res) => {
 
         const db = client.db('crud');
         const collection = db.collection('cves');
-        const data = await collection.find({ published: { $regex: year, $options: 'i' } }).toArray()
+        const data = await collection.find({ publishedDate: { $regex: year, $options: 'i' } }).toArray()
         res.json(data)
 
     } catch (error) {
@@ -224,7 +224,7 @@ router.get('/score/:score', async (req, res) => {
         const collection = db.collection('cves');
 
         // Find CVEs matching the provided score
-        const data = await collection.find({ score: Number(score) }).toArray();
+        const data = await collection.find({ baseScore: Number(score) }).toArray();
 
         res.json({
             totalResults: data.length,
@@ -236,31 +236,40 @@ router.get('/score/:score', async (req, res) => {
     }
 });
 
-
-router.get("/modified/:days", async (req, res) => {
+router.get('/modified/:days', async (req, res) => {
     const { days } = req.params;
 
     try {
+        // Validate `days` parameter
         const client = new MongoClient(process.env.MONGO_URI);
         await client.connect();
 
         const db = client.db('crud');
         const collection = db.collection('cves');
+        const daysInt = parseInt(days, 10);
+        if (isNaN(daysInt) || daysInt <= 0) {
+            return res.status(400).json({ message: 'Invalid "days" parameter. It should be a positive integer.' });
+        }
 
+        // Calculate the date threshold
         const dateThreshold = new Date();
+        console.log(dateThreshold.getDate);
         dateThreshold.setDate(dateThreshold.getDate() - days);
 
+        // Query the database for documents modified in the last `N` days
         const query = {
-            lastModified: { $gte: dateThreshold.toISOString() }
+            lastModifiedDate: { $gte: dateThreshold.toISOString() },
         };
 
-        const data = await collection.find(query).toArray();
-        res.json(data)
-
+        const cveRecords = await collection.find(query).toArray();
+        console.log(cveRecords);
+        // Return the filtered results
+        res.json(cveRecords);
     } catch (error) {
-        console.error('Error fetching specific CVE:', error.message);
-        res.status(500).json({ message: 'Error fetching specific year' });
+        console.error('Error fetching CVE records:', error.message);
+        res.status(500).json({ message: 'Error fetching CVE records', error: error.message });
     }
-})
+});
+
 
 module.exports = router;
