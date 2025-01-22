@@ -1,44 +1,94 @@
 body {
-    font-family: Arial, sans-serif;
-  }
   
-  .cve-list, .cve-details {
-    padding: 20px;
-  }
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #ab3c5d; /* Light gray background */
+  color: #657db0; /* Dark gray for text */
+  margin: 0;
+  padding: 0;
+}
+
+.cve-list, .cve-details {
+  padding: 25px;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa); /* Subtle gradient */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(116, 50, 151, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #ffffff; /* Clean white for contrast */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table, th, td {
+  border: none;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  color: #374151; /* Steel gray */
+}
+
+th {
+  background-color: #f3f4f6; /* Very light gray for table headers */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f5f9; /* Light gray for alternate rows */
+}
+
+tr:hover td {
+  background-color: #e0f7fa; /* Soft cyan on hover */
+  cursor: pointer;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 18px;
+  background-color: #5559d0; /* Vibrant blue */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: #9333ea; /* Purple on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.pagination .active {
+  background-color: #dc7fcb; /* Aqua for active button */
+  color: white;
+}
+
+.filters input {
+  margin: 0 10px 20px 0;
+  padding: 12px;
+  width: 250px;
+  border: 1px solid #93c5fd; /* Light blue border */
+  border-radius: 5px;
+  background-color: #f3f4f6; /* Light gray background */
+  color: #111827; /* Dark text */
+  font-size: 1rem;
+}
+
+.filters input::placeholder {
+  color: #6b7280; /* Muted gray placeholder */
+}
+
+button {
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
-  
-  .pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-  }
-  
-  .pagination .active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .filters input {
-    margin: 0 10px 20px 0;
-    padding: 8px;
-    width: 200px;
-  }
-  
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

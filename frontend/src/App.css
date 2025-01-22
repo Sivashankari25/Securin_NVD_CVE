@@ -96,38 +96,6 @@ td {
 td:hover {
   background-color: #d8ebff; /* Light cyan-blue on hover */
   cursor: pointer;
-}.pagination {
-  display: flex;
-  justify-content: flex-end; /* Align the entire pagination to the right */
-  align-items: center;
-  margin-top: 20px;
-  margin-right: 10px; /* Add spacing from the right side */
-}
-
-.pagination button {
-  margin: 0 5px;
-  padding: 10px 15px;
-  border: none;
-  background-color: #007bff; /* Blue button */
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.pagination button:hover {
-  background-color: #0056b3; /* Darker blue */
-  transform: scale(1.05); /* Slight zoom */
-}
-
-.pagination button.active {
-  background-color: #004085; /* Dark blue for active button */
-}
-
-.pagination button:disabled {
-  background-color: #d1d5db; /* Gray for disabled buttons */
-  cursor: not-allowed;
 }
 
 /* Pagination button styles */

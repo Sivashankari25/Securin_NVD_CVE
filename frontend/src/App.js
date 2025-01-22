@@ -40,6 +40,7 @@ const App = () => {
             }
             const data = await response.json();
             setCveList(data.vulnerabilities || []);
+            console.log(data)
             setTotalRecords(data.totalResults || 0);
         } catch (err) {
             setError(err.message);
@@ -79,7 +80,7 @@ const App = () => {
 
     return (
         <div className="container mt-4 cve-container">
-            <h1 className="text-center mb-4 cve-title">CVE LIST</h1>
+            <h1 className="text-center mb-4 cve-title">CVE List</h1>
 
             {/* Filters Section */}
             <Filters
@@ -137,7 +138,7 @@ const App = () => {
             ) : cveList.length > 0 ? (
                 <div className="table-responsive">
                     <table className="table table-bordered table-hover cve-table">
-                        <thead style={{ backgroundColor: '#5559d0', color: 'white' }} className="table-dark">
+                        <thead className="table-dark">
                             <tr>
                                 <th>CVE ID</th>
                                 <th>IDENTIFIER</th>
@@ -147,21 +148,21 @@ const App = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {cveList.map((cve) => (
+                            {cveList.map((vulnerability) => (
                                 <tr
-                                    key={cve.cve.id}
-                                    onClick={() => handleRowClick(cve.cve.id)}
+                                    key={vulnerability.cveId}
+                                    onClick={() => handleRowClick(vulnerability.cveId)}
                                     className="cve-row"
                                     style={{ cursor: 'pointer' }}
                                 >
-                                    <td>{cve.cve.id}</td>
-                                    <td>{cve.cve.descriptions[0].value}</td>
-                                    <td>{new Date(cve.cve.published).toLocaleDateString()}</td>
-                                    <td>{new Date(cve.cve.lastModified).toLocaleDateString()}</td>
-                                    <td>{cve.cve.vulnStatus || 'Unknown'}</td>
+                                    <td>{vulnerability.cveId}</td>
+                                    <td>{vulnerability.descriptions[0].value}</td>
+                                    <td>{new Date(vulnerability.publishedDate).toLocaleDateString()}</td>
+                                    <td>{new Date(vulnerability.lastModifiedDate).toLocaleDateString()}</td>
+                                    <td>{vulnerability.metrics.cvssMetricV2[0]?.baseSeverity || 'Unknown'}</td>
                                 </tr>
-                            ))}
-                        </tbody>
+                                    ))}
+                            </tbody>
                     </table>
                 </div>
             ) : (

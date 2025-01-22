@@ -1,87 +1,86 @@
 .filters-card {
-    margin: 20px;
-  }
-  
-  .filters-grid {
-    display: flex;
-    flex-direction: row; /* Align all filter groups and buttons side by side */
-    justify-content: center; /* Center align everything */
-    align-items: center; /* Vertically align input fields and buttons */
-    gap: 50px; /* Space between filter groups and buttons */
-  }
-  
-  .filter-group {
-    display: flex;
-    flex-direction: column; /* Keep labels above inputs */
-    align-items: center; /* Center align label and input */
-  }
-  
-  .filter-label {
-    margin-bottom: 8px; /* Space between label and input */
-    font-size: 20px; /* Increase font size for better visibility */
-    font-weight: bold; /* Make label text bold */
-    color: #007bff; /* Change label color to blue */
-    text-align: center; /* Center align the text */
-  }
-  
-  .filter-input {
-    padding: 10px; /* Add padding for better input field spacing */
-    width: 200px; /* Adjust width of input fields */
-    background-color: #007bff; /* Set input background color to blue */
-    border: 1px solid #007bff; /* Add border matching theme */
-    border-radius: 5px; /* Rounded corners for input fields */
-    color: white; /* Set input text color to white */
-    font-size: 18px; /* Set input text size */
-    text-align: center; /* Center align input text */
-  }
-  
-  .filter-input::placeholder {
-    color: white; /* Set placeholder text color to white */
-    opacity: 1; /* Ensure placeholder text is fully visible */
-  }
-  
-  .filter-actions {
-    display: flex;
-    flex-direction: row; /* Align buttons side by side */
-    align-items: center; /* Vertically align buttons with inputs */
-    gap: 20px; /* Space between buttons */
-  }
-  
-  .clear-filters-btn,
-  .search-filters-btn {
-    padding: 12px 20px; /* Add padding for larger buttons */
-    cursor: pointer;
-    background-color: #007bff; /* Primary button background */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners for buttons */
-    font-size: 18px; /* Button text size */
-    font-weight: bold; /* Make button text bold */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-    margin-top: 30px; /* Add space above the buttons to move them down */
-  }
-  
-  .clear-filters-btn:hover,
-  .search-filters-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom effect on hover */
-  }
-  
-  .clear-filters-btn:active,
-  .search-filters-btn:active {
-    background-color: #003d80; /* Even darker blue when pressed */
-  }
-  
-  /* Optional: If you want a hover effect on other buttons you may have */
-  .filter-actions button:hover {
-    background-color: #0056b3; /* Lighter blue for hover */
-    transform: scale(1.05); /* Slight zoom effect */
-  }
-  
-  .filter-label-btn:hover,
-  .clear-filters-btn:hover,
-  .search-filters-btn:hover {
-    background-color: #0056b3; /* Consistent lighter blue on hover */
-    color: white; /* Ensure text stays white */
-  }
-  
+  margin: 20px;
+}
+
+.filters-grid {
+  display: flex;
+  flex-direction: row; /* Align all filter groups and buttons side by side */
+  justify-content: center; /* Center align everything */
+  align-items: center; /* Vertically align input fields and buttons */
+  gap: 50px; /* Space between filter groups and buttons */
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column; /* Keep labels above inputs */
+  align-items: center; /* Center align label and input */
+}
+
+.filter-label {
+  margin-bottom: 8px; /* Space between label and input */
+  font-size: 20px; /* Increase font size for better visibility */
+  font-weight: bold; /* Make label text bold */
+  color: #007bff; /* Change label color to blue */
+  text-align: center; /* Center align the text */
+}
+
+.filter-input {
+  padding: 10px; /* Add padding for better input field spacing */
+  width: 200px; /* Adjust width of input fields */
+  background-color: #007bff; /* Set input background color to blue */
+  border: 1px solid #007bff; /* Add border matching theme */
+  border-radius: 5px; /* Rounded corners for input fields */
+  color: white; /* Set input text color to white */
+  font-size: 18px; /* Set input text size */
+  text-align: center; /* Center align input text */
+}
+
+.filter-input::placeholder {
+  color: white; /* Set placeholder text color to white */
+  opacity: 1; /* Ensure placeholder text is fully visible */
+}
+
+.filter-actions {
+  display: flex;
+  flex-direction: row; /* Align buttons side by side */
+  align-items: center; /* Vertically align buttons with inputs */
+  gap: 20px; /* Space between buttons */
+}
+
+.clear-filters-btn,
+.search-filters-btn {
+  padding: 12px 20px; /* Add padding for larger buttons */
+  cursor: pointer;
+  background-color: #007bff; /* Primary button background */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for buttons */
+  font-size: 18px; /* Button text size */
+  font-weight: bold; /* Make button text bold */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  margin-top: 30px; /* Add space above the buttons to move them down */
+}
+
+.clear-filters-btn:hover,
+.search-filters-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.clear-filters-btn:active,
+.search-filters-btn:active {
+  background-color: #003d80; /* Even darker blue when pressed */
+}
+
+/* Optional: If you want a hover effect on other buttons you may have */
+.filter-actions button:hover {
+  background-color: #0056b3; /* Lighter blue for hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.filter-label-btn:hover,
+.clear-filters-btn:hover,
+.search-filters-btn:hover {
+  background-color: #0056b3; /* Consistent lighter blue on hover */
+  color: white; /* Ensure text stays white */
+}
