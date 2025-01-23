@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const {
         resultsPerPage = 10,
         startIndex = 0,
-        sortBy = 'published',
+        sortBy = 'publishedDate',
         sortOrder = 'desc',
         year,
         score,
