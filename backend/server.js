@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const connectDB = require('./config/db'); 
 const cveRoutes = require('./routes/cveRoutes');
-const syncCveData = require('./services/syncService');
+
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use('/api/cves', cveRoutes);
 
 connectDB();
 
-syncCveData();
+
 
 app.get('/', (req, res) => {
     res.send('Backend is running successfully!');

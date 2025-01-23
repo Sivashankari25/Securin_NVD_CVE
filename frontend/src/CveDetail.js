@@ -1,128 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-// import './cveDetails.css';
-
-// const CveDetail = () => {
-//     const { cveId } = useParams();
-//     const [cveData, setCveData] = useState(null);
-//     const [isLoading, setIsLoading] = useState(true);
-//     const [error, setError] = useState(null);
-
-//     useEffect(() => {
-//         const fetchCveDetail = async () => {
-//             try {
-//                 const response = await fetch(`http://localhost:5000/api/cves/${cveId}`);
-//                 if (!response.ok) {
-//                     throw new Error(`API call failed with status ${response.status}`);
-//                 }
-
-//                 const data = await response.json();
-//                 setCveData(data);
-//                 console.log(data)
-//             } catch (err) {
-//                 setError(err.message);
-//             } finally {
-//                 setIsLoading(false);
-//             }
-//         };
-
-//         fetchCveDetail();
-//     }, [cveId]);
-
-//     if (isLoading) return <p>Loading... <br /><br />Please wait for a while.</p>;
-//     if (error) return <p style={{ color: 'red' }}>{error}</p>;
-
-//     return (
-//         <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-//             <h1 style={{ textAlign: 'center' }}>CVE Detail: {cveId}</h1>
-//             {cveData ? (
-//                 <div>
-//                     <section>
-//                         <h2>Description:</h2>
-//                         <p>{cveData.descriptions[0].value}</p>
-//                         <section>
-//                             <h2>CVSS V2 Metrics:</h2>
-//                             <div>
-//                                 <p><strong>Severity:</strong> {cveData.metrics.cvssMetricV2.baseSeverity || "N/A"} <br />
-//                                 <strong>Score:</strong> {cveData.metrics.cvssMetricV2.cvssData.baseScore || "N/A"}
-//                                 <br />
-//                                 <strong>Vector String:</strong> {cveData.cvssMetrics.vectorString || "N/A"}</p>
-//                             </div>
-//                         </section>
-//                         {cveData.cvssMetrics.map((metric, index) => (
-//                            <table key={index} style={{ width: '100%', border: '2px solid black', marginBottom: '20px', borderCollapse: 'collapse' }}>
-//                            <thead>
-//                                <tr>
-//                                    <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Access Vector</th>
-//                                    <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Access Complexity</th>
-//                                    <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Authentication</th>
-//                                    <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Confidentiality Impact</th>
-//                                    <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Integrity Impact</th>
-//                                    <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Availability Impact</th>
-//                                </tr>
-//                            </thead>
-//                            <tbody>
-//                                <tr>
-//                                    <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{metric.accessVector}</td>
-//                                    <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{metric.accessComplexity}</td>
-//                                    <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{metric.authentication}</td>
-//                                    <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{metric.confidentialityImpact}</td>
-//                                    <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{metric.integrityImpact}</td>
-//                                    <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{metric.availabilityImpact}</td>
-//                                </tr>
-//                            </tbody>
-//                        </table>
-                       
-//                         ))}
-//                     </section>
-
-//                     <section>
-//                         <h2>Scores:</h2>
-//                         {cveData.metrics.cvssMetricV2.map((metric, index) => (
-//                             <div>
-//                                 <p><strong>Exploitability Score:</strong> {metric.exploitabilityScore}</p>
-//                                 <p><strong>Impact Score:</strong> {metric.impactScore}</p>
-//                             </div>
-//                         ))}
-//                     </section>
-
-//                     <section>
-//                         <h2>CPE:</h2>
-//                         {cveData.configurations.map((config, idx) => (
-//                             <table key={idx} style={{ width: '100%', border: '2px solid black', marginBottom: '20px', borderCollapse: 'collapse' }}>
-//                             <thead>
-//                                 <tr>
-//                                     <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Criteria</th>
-//                                     <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Match Criteria ID</th>
-//                                     <th style={{ border: '2px solid black', fontWeight: 'bold' }}>Vulnerable</th>
-//                                 </tr>
-//                             </thead>
-//                             <tbody>
-//                                 {config.nodes.map((node, index) =>
-//                                     node.cpeMatch.map((cpe, i) => (
-//                                         <tr key={`${index}-${i}`}>
-//                                             <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{cpe.criteria}</td>
-//                                             <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{cpe.matchCriteriaId}</td>
-//                                             <td style={{ border: '2px solid black', fontWeight: 'bold' }}>{cpe.vulnerable ? 'Yes' : 'No'}</td>
-//                                         </tr>
-//                                     ))
-//                                 )}
-//                             </tbody>
-//                         </table>
-                        
-//                         ))}
-//                     </section>
-
-//                 </div>
-//             ) : (
-//                 <p>No data available for this CVE.</p>
-//             )}
-//         </div>
-//     );
-// };
-
-// export default CveDetail;
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './cveDetails.css';
@@ -158,14 +33,14 @@ const CveDetail = () => {
 
     return (
         <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-            <h1 style={{ textAlign: 'center' }}>CVE Detail: {cveId}</h1>
+            <h1 style={{ textAlign: 'center' }}>{cveId}</h1>
             {cveData ? (
                 <div>
                     <section>
-                        <h2>Description:</h2>
+                        <h3>DESCRIPTION:</h3>
                         <p>{cveData.descriptions[0]?.value}</p>
                         <section>
-                            <h2>CVSS V2 Metrics:</h2>
+                            <h3>CVSS V2 METRICS:</h3>
                             <div>
                                 <p><strong>Severity:</strong> {cveData.metrics.cvssMetricV2[0].baseSeverity || "N/A"} <br />
                                 <strong>Score:</strong> {cveData.metrics.cvssMetricV2[0].cvssData.baseScore || "N/A"}
@@ -201,7 +76,7 @@ const CveDetail = () => {
                     </section>
 
                     <section>
-                        <h2>Scores:</h2>
+                        <h3>SCORES:</h3>
                         {cveData.metrics.cvssMetricV2.map((metric, index) => (
                             <div>
                                 <p><strong>Exploitability Score:</strong> {metric.exploitabilityScore}</p>
@@ -211,7 +86,7 @@ const CveDetail = () => {
                     </section>
 
                     <section>
-                        <h2>CPE:</h2>
+                        <h3>CPE:</h3>
                         {cveData.configurations.map((config, idx) => (
                             <table key={idx} style={{ width: '100%', border: '2px solid black', marginBottom: '20px', borderCollapse: 'collapse' }}>
                             <thead>
