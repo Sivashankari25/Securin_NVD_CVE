@@ -47,7 +47,7 @@ router.get('/', async (req, res) => {
                 ]
             };
         }
-        // ...existing code...
+        
         console.log(query);
 
 
@@ -59,7 +59,7 @@ router.get('/', async (req, res) => {
             .toArray();
 
         const totalResults = await collection.countDocuments(query);
-
+        console.log(totalResults);
         res.json({ totalResults, vulnerabilities: data });
     } catch (error) {
         console.error('Error fetching CVE data:', error.message);
@@ -254,7 +254,7 @@ router.get('/modified/:days', async (req, res) => {
         // Calculate the date threshold
         const dateThreshold = new Date();
         console.log(dateThreshold.getDate);
-        dateThreshold.setDate(dateThreshold.getDate() - days);
+        dateThreshold.setDate(dateThreshold.getDate() - daysInt);
 
         // Query the database for documents modified in the last `N` days
         const query = {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getCves } from '../services/api';
 import Pagination from './Pagination';
 import Filters from './Filters';
+import { getCves } from '../controller/cveCon'; 
 import { useNavigate } from 'react-router-dom';
 
 const CveList = () => {

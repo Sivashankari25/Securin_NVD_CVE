@@ -11,7 +11,7 @@ const Filters = ({ filters, onFilterChange, onClearFilters, onSearch }) => {
             type="text"
             className="filter-input"
             name="year"
-            placeholder="e.g., 2023"
+            placeholder="e.g., 2000"
             value={filters.year}
             onChange={onFilterChange}
           />
@@ -22,7 +22,7 @@ const Filters = ({ filters, onFilterChange, onClearFilters, onSearch }) => {
             type="number"
             className="filter-input"
             name="score"
-            placeholder="e.g., 7.5"
+            placeholder="e.g., 10"
             min="0"
             max="10"
             step="0.1"
